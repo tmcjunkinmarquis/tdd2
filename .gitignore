@@ -1,0 +1,6 @@
+# node modules - this is a comment - don't put node modules in github
+# file or filepath here
+
+node_modules/
+
+
