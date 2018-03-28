@@ -9,23 +9,23 @@ describe('MergeSort', function () {
   it('should sort numbers in an array', function () {
         let array = [7, 11, 10, 2];
         const expected = [2, 7, 10, 11];
-        const actual = mergeSort(array);
+        const actual = MergeSort(array);
         assert.deepEqual(actual, expected);
       })
+
+    it('should sort neg and pos numbers', function () {
+          let array = [-11, 7, -10, 100];
+          const expected = [-11, -10, 7, 100];
+          const actual = MergeSort(array);
+          assert.deepEqual(actual, expected);
+    })
   
       
 }); 
 
 
 
-// describe('mergeSort', () => {
 
-//   it('should sort numbers in an array', () =>{
-//     let array = [7, 11, 10, 2];
-//     const expected = [2, 7, 10, 11];
-//     const actual = mergeSort(array);
-//     assert.deepEqual(actual, expected);
-//   })
 
 //   it('should sort negative numbers', () =>{
 //     let array = [-11, -2, -10, -77];
