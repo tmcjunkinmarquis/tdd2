@@ -1,6 +1,5 @@
 const chai = require('chai');
 const assert = chai.assert;
-const expect = chai.expect;
 
 const InsertionSort = require('../lib/InsertionSort');
 
@@ -38,12 +37,19 @@ describe('InsertionSort', function () {
     assert.deepEqual(actual, expected);
   })
 
-  it('should sort a large array of numbers', function () {
+  it('should sort an array of length: 4, range: 1-100', function () {
+    var randoms = Array.from({length: 4}, function () {Math.floor(Math.random() * 100)});
+    const expected = randoms.sort();
+    const actual = InsertionSort(randoms);
+    assert.deepEqual(actual, expected);
+  })
+
+  it('should sort a large array of 34,000 numbers', function () {
     const largeArray = [];
     const min = -1000;
     const max = 1000;
 
-    for (let i = 0; i < 33000; i++) {
+    for (let i = 0; i < 34000; i++) {
       let number = Math.floor(Math.random() * (max - min)) + min;
 
       largeArray.push(number);
@@ -52,7 +58,7 @@ describe('InsertionSort', function () {
     let sortedLargeArray = InsertionSort(largeArray);
 
     for (let i = 1; i < sortedLargeArray.length; i++) {
-      expect(sortedLargeArray[i]).to.be.at.least(sortedLargeArray[i - 1]);
+      assert.isAtLeast(sortedLargeArray[i], sortedLargeArray[i - 1]);
     }
   });
       
