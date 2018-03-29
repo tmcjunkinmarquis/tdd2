@@ -37,7 +37,7 @@ describe('MergeSort', function () {
     const min = -1000;
     const max = 1000;
 
-    for (let i = 0; i < 130000; i++) {
+    for (let i = 0; i < 10000; i++) {
       let number = Math.floor(Math.random() * (max - min)) + min;
 
       largeArray.push(number);

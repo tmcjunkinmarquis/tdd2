@@ -4,7 +4,7 @@ const assert = chai.assert;
 const InsertionSort = require('../lib/InsertionSort');
 
 describe('InsertionSort', function () {
-  
+
   it('should be a function', function () {
     assert.isFunction(InsertionSort)
   });
@@ -31,14 +31,14 @@ describe('InsertionSort', function () {
   })
 
   it('should sort an array of length: 4, range: 1-100', function () {
-    var randoms = Array.from({length: 4}, function () {Math.floor(Math.random() * 100)});
+    var randoms = Array.from({ length: 4 }, function () { Math.floor(Math.random() * 100) });
     const expected = randoms.sort();
     const actual = InsertionSort(randoms);
     assert.deepEqual(actual, expected);
   })
 
   it('should sort an array of length: 4, range: 1-100', function () {
-    var randoms = Array.from({length: 4}, function () {Math.floor(Math.random() * 100)});
+    var randoms = Array.from({ length: 4 }, function () { Math.floor(Math.random() * 100) });
     const expected = randoms.sort();
     const actual = InsertionSort(randoms);
     assert.deepEqual(actual, expected);
@@ -49,7 +49,7 @@ describe('InsertionSort', function () {
     const min = -1000;
     const max = 1000;
 
-    for (let i = 0; i < 34000; i++) {
+    for (let i = 0; i < 5000; i++) {
       let number = Math.floor(Math.random() * (max - min)) + min;
 
       largeArray.push(number);
@@ -61,8 +61,4 @@ describe('InsertionSort', function () {
       assert.isAtLeast(sortedLargeArray[i], sortedLargeArray[i - 1]);
     }
   });
-      
-})
-
-
-
+});
